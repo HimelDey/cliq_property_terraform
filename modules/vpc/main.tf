@@ -47,6 +47,16 @@ resource "aws_route_table_association" "private_route_table_association" {
     subnet_id = aws_subnet.private_subnet.id
 }
 
+resource "aws_eip" "nat_eip" {
+  domain = "vpc"
+}
+
+resource "aws_nat_gateway" "custom_nat_gateway" {
+    allocation_id = aws_eip.nat_eip.id
+    subnet_id = aws_subnet.private_subnet.id
+  
+}
+
 resource "aws_security_group" "custom_sg" {
     vpc_id = aws_vpc.custom_vpc.id
     name = "${var.vpc_name}-sg"
