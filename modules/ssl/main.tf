@@ -6,6 +6,6 @@ resource "aws_acm_certificate" "ssl_certificate" {
     }
     
     tags = {
-        Name = "SSL Certificate for ALB"
+        Name = "SSL Certificate for new cliqproperty"
     }
 }

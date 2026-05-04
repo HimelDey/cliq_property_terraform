@@ -12,3 +12,14 @@ variable "security_group" {
     description = "The security group ID to associate with the EC2 instance"
     type        = string 
 }
+
+variable "tag" {
+    description = "The tag to assign to the EC2 instance"
+    type        = string
+    default = "New CliqProperty"
+}
+
+variable "subnet_id" {
+    description = "The ID of the subnet to associate with the EC2 instance"
+    type        = string
+}
