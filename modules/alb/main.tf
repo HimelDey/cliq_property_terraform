@@ -4,7 +4,6 @@ resource "aws_lb" "application_load_balancer" {
     load_balancer_type = "application"
     security_groups = [var.security_group_id]
     subnets = [var.public_subnet_id, var.public_subnet_id_alt]
-    # vpc_id = var.vpc_id
     tags = {
         Name = "New CliqProperty"
     } 
